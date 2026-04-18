@@ -1,0 +1,493 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0c0c0c;
+  color: #eaeaea;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CONTENEDOR PRINCIPAL */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeUp 0.8s ease;
+}
+
+header img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 13px;
+  opacity: 0.6;
+  line-height: 1.5;
+}
+
+/* LINKS */
+section[aria-label="Links principales"] {
+  margin-bottom: 35px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: #eaeaea;
+  font-size: 14px;
+
+  padding: 14px;
+  border-radius: 12px;
+  background: #171717;
+
+  transition: all 0.25s ease;
+
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* ICONOS */
+.icon {
+  width: 16px;
+  height: 16px;
+  fill: #eaeaea;
+  opacity: 0.8;
+}
+
+/* HOVER */
+li a:hover {
+  background: #1f1f1f;
+  transform: translateY(-2px);
+}
+
+/* SOCIAL */
+section[aria-label="redes sociales"] {
+  text-align: center;
+  margin-bottom: 30px;
+
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+section[aria-label="redes sociales"] nav {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+section[aria-label="redes sociales"] a {
+  text-decoration: none;
+  font-size: 12px;
+  color: #eaeaea;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+section[aria-label="redes sociales"] a:hover {
+  opacity: 1;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer small {
+  font-size: 11px;
+  opacity: 0.35;
+}
+
+/* TÍTULO */
+.luiz-title {
+  position: relative;
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* TEXTO PRINCIPAL */
+.luiz-title span:first-child {
+  position: relative;
+  z-index: 2;
+}
+
+/* ESTRELLAS */
+.star {
+  position: absolute;
+  font-size: 12px;
+  opacity: 0.6;
+  animation: float 4s ease-in-out infinite;
+}
+
+.star-1 {
+  top: -8px;
+  right: -14px;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 10px;
+  left: -14px;
+  font-size: 10px;
+  animation-delay: 1.5s;
+}
+
+/* LUNA */
+.moon {
+  position: absolute;
+  font-size: 14px;
+  bottom: -6px;
+  right: -10px;
+  opacity: 0.5;
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* ANIMACIONES */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 0.9;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* ENTRADA SUAVE DEL TÍTULO */
+/* TIPOGRAFÍA */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
+
+/* TÍTULO */
+.luiz-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+}
+
+/* CONTENEDOR ESTRELLAS */
+/* ===== ESTRELLAS ===== */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+
+  background: #ffffff; /* blanco real */
+  opacity: 0.25;
+
+  clip-path: polygon(
+    50% 0%, 
+    61% 35%, 
+    98% 35%, 
+    68% 57%, 
+    79% 91%, 
+    50% 70%, 
+    21% 91%, 
+    32% 57%, 
+    2% 35%, 
+    39% 35%
+  );
+
+  filter: blur(0.3px); /* suaviza bordes */
+  animation: floatStar linear infinite;
+}
+
+/* POSICIONES */
+.star:nth-child(1) { top: 10%; left: 20%; animation-duration: 18s; }
+.star:nth-child(2) { top: 70%; left: 80%; animation-duration: 22s; }
+.star:nth-child(3) { top: 40%; left: 60%; animation-duration: 20s; }
+.star:nth-child(4) { top: 80%; left: 10%; animation-duration: 25s; }
+.star:nth-child(5) { top: 25%; left: 75%; animation-duration: 19s; }
+.star:nth-child(6) { top: 55%; left: 30%; animation-duration: 23s; }
+
+/* ANIMACIÓN */
+@keyframes floatStar {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-50px) rotate(180deg);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+    opacity: 0.15;
+  }
+}
+
+
+/* ===== TÍTULO ===== */
+.luiz-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ===== FOTO CON BLUR TRANSICIÓN ===== */
+header figure {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* imagen */
+header img {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* glow / blur alrededor */
+header figure::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  
+  filter: blur(20px);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+/* transición hacia el título */
+header {
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 80px;
+
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  
+  filter: blur(25px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* fondo vivo (casi imperceptible) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(60% 40% at 50% 10%, rgba(255,255,255,0.05), transparent 70%);
+  pointer-events: none;
+  animation: breathe 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* halo que sigue el mouse */
+.cursor-glow {
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+li a {
+  position: relative;
+  overflow: hidden;
+}
+
+/* línea que cruza suave */
+li a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.12), transparent);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+li a:hover::after {
+  opacity: 1;
+}
+
+/* presión */
+li a:active {
+  transform: scale(0.97);
+}
+
+.star {
+  animation: floatStar linear infinite, twinkle 3s ease-in-out infinite;
+}
+
+.star:nth-child(odd) {
+  animation-duration: 20s, 2.5s;
+}
+.star:nth-child(even) {
+  animation-duration: 24s, 3.5s;
+}
+
+.luiz-title::after {
+  content: "LUIZ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(255,255,255,0.08);
+  filter: blur(4px);
+  transform: translateY(2px);
+  z-index: -1;
+}
+
+.secret {
+  font-size: 11px;
+  opacity: 0;
+  margin-top: 10px;
+  transition: 0.4s;
+}
+
+header:hover .secret {
+  opacity: 0.4;
+}
+
+main {
+  animation: fadeMain 1.2s ease;
+}
+
+@keyframes fadeMain {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes twinkle {
+  0%,100% { opacity: .15; }
+  50%     { opacity: .5; }
+}
+
+@keyframes breathe {
+  0%,100% { opacity: .4; transform: scale(1); }
+  50%     { opacity: .7; transform: scale(1.05); }
+}
+
+/* ANIMACIÓN */
+@keyframes floatStar {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.05;
+  }
+  50% {
+    transform: translateY(-40px) rotate(180deg);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+    opacity: 0.05;
+  }
+}
+
+/* ANIMACIÓN ENTRADA */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SCROLL ANIMATION ACTIVE */
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 0.6s ease;
+}
